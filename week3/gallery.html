@@ -6,18 +6,36 @@
   <link rel="stylesheet" href="style.css">
   <style>
    .gallery-container {
-	margin: 0 auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin-top: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
   }
 
    .gallery-container img {
-	width: 24%;
-	margin-bottom: 20px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 24%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
+
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .gallery-img-container {
+    display: flex;
+  }
+
+  .gallery-img {
+    display: none;
+    width: 100%;
+  }
+
+  /* Add your existing styles here */
+
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -25,7 +43,7 @@
  <div>
   <header>
     <h1 class="headeraH1">Wanderlust Voyages | Travel Agency</h1>
-	</header>
+  </header>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -40,16 +58,30 @@
   <main class="services">
       <h1>Gallery</h1>
 
-		<div class="gallery-container">
-			<img src="image/1.jpeg" alt="Spa Image 1">
-			<img src="image/2.jpeg" alt="Spa Image 2">
-			<img src="image/3.jpeg" alt="Spa Image 3">
-			<img src="image/4.jpeg" alt="Spa Image 4">
-			<img src="image/5.jpeg" alt="Spa Image 5">
-			<img src="image/6.jpeg" alt="Spa Image 6">
-			<img src="image/7.jpg" alt="Spa Image 7">
-			<img src="image/8.jpeg" alt="Spa Image 7">
-		</div>
+    <div class="gallery-container">
+      <!-- Add the slideshow container and buttons here -->
+      <div class="slideshow-container">
+        <!-- Previous button -->
+        <a id="prev" class="prev cursor">&#10094;</a>
+
+        <!-- Next button -->
+        <a id="next" class="next cursor">&#10095;</a>
+
+        <!-- Slides -->
+        <div class="gallery-img-container">
+          <img class="gallery-img" src="image/1.jpeg" alt="Spa Image 1">
+          <img class="gallery-img" src="image/2.jpeg" alt="Spa Image 2">
+          <img class="gallery-img" src="image/3.jpeg" alt="Spa Image 3">
+          <img class="gallery-img" src="image/4.jpeg" alt="Spa Image 4">
+          <img class="gallery-img" src="image/5.jpeg" alt="Spa Image 5">
+          <img class="gallery-img" src="image/6.jpeg" alt="Spa Image 6">
+          <img class="gallery-img" src="image/7.jpg" alt="Spa Image 7">
+          <img class="gallery-img" src="image/8.jpeg" alt="Spa Image 8">
+        </div>
+      </div>
+      <!-- End of slideshow container -->
+
+    </div>
    <!-- Call to Action -->
    <section class="cta-container">
     <h2>Ready to Experience Our Services?</h2>
@@ -67,5 +99,48 @@
     <p >&copy; 2024 Wanderlust Voyages | Travel Agency. All rights reserved.</p>
   </footer>
  </div>
+
+ <!-- Add the script at the end of the body -->
+ <script>
+  // Variable to keep track of the current slide
+  var currentSlide = 1;
+
+  // Function to increment/decrement the current slide number
+  function changeSlide(n) {
+    showSlide(currentSlide += n);
+  }
+
+  // Function to update the slide's visibility
+  function showSlide(n) {
+    var slides = document.getElementsByClassName("gallery-img");
+
+    // Handle case when the slideshow reaches the last slide
+    if (n > slides.length) {
+      currentSlide = 1;
+    }
+
+    // Handle case when the slideshow reaches the first slide
+    if (n < 1) {
+      currentSlide = slides.length;
+    }
+
+    // Hide all slides
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    // Display the current slide
+    slides[currentSlide - 1].style.display = "block";
+  }
+
+  // Event listeners for next and previous buttons
+  document.getElementById("prev").addEventListener("click", function() {
+    changeSlide(-1);
+  });
+
+  document.getElementById("next").addEventListener("click", function() {
+    changeSlide(1);
+  });
+</script>
 </body>
 </html>

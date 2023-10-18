@@ -17,7 +17,7 @@
   <header>
     <!-- Left column for logo -->
     <div class="logo-container">
-        <img src="images1/logo.png" alt="Wanderlust Voyages Logo" class="logo">
+        <img src="images/logo.png" alt="Wanderlust Voyages Logo" class="logo">
     </div>
 
     <!-- Right column for navigation -->
@@ -30,8 +30,8 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#"><img src="images1/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="images1/instagram.svg" alt="Instagram"></a></li>
+                <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="images/instagram.svg" alt="Instagram"></a></li>
             </ul>
         </nav>
     </div>
@@ -64,25 +64,25 @@
         <div class="services-container">
 
           <div class="service-column">
-            <img src="images1/Flights.png" alt="Illustration representing flight bookings">
+            <img src="images/Flights.png" alt="Illustration representing flight bookings">
             <h3>Flight and Transport Bookings</h3>
             <p>One of the primary services offered by travel agencies is the reservation of flights.</p>
           </div>
 
           <div class="service-column">
-            <img src="images1/ladies facial.png" alt="Illustration of a hotel">
+            <img src="images/ladies facial.png" alt="Illustration of a hotel">
             <h3>Accommodation Reservations</h3>
             <p>Travel agencies have partnerships and affiliations with a wide range of hotels.</p>
           </div>
 
           <div class="service-column">
-            <img src="images1/tour packages.png" alt="Illustration representing tour packages">
+            <img src="images/tour packages.png" alt="Illustration representing tour packages">
             <h3>Itinerary Planning and Tour Packages</h3>
             <p>Travel agencies offer customized and pre-packaged tours to suit the preferences of travelers.</p>
           </div>
 
           <div class="service-column">
-            <img src="images1/reservation.png" alt="Illustration representing activities and excursions">
+            <img src="images/reservation.png" alt="Illustration representing activities and excursions">
             <h3>Activity & Excursion Bookings</h3>
             <p>We curate and book a diverse range of local activities and excursions for unforgettable experiences.</p>
           </div>
@@ -122,17 +122,17 @@ var images = [];	// Images Array
 var time = 2000;	// Time Interval Between Switch
 	 
 // Image List
-images1[0] = "images1/slide 1.jpg";
-images1[1] = "images1/slide 2.jpg";
-images1[2] = "images1/slide 3.jpg";
-images1[3] = "images1/slide 4.jpg";
+images[0] = "images/slide1.png";
+images[1] = "images/slide2.png";
+images[2] = "images/slide3.png";
+images[3] = "images/slide4.png";
 
 // Change Image
 function changeImg(){
-	document.slide.src = images1[i];
+	document.slide.src = images[i];
 
 	// Check If Index Is Under Max
-	if(i < images1.length - 1){
+	if(i < images.length - 1){
 	  // Add 1 to Index
 	  i++; 
 	} else { 

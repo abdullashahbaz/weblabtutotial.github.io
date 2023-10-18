@@ -102,44 +102,46 @@
 
  <!-- Add the script at the end of the body -->
  <script>
-  // Variable to keep track of the current slide
-  var currentSlide = 1;
+  document.addEventListener("DOMContentLoaded", function() {
+    // Variable to keep track of the current slide
+    var currentSlide = 1;
 
-  // Function to increment/decrement the current slide number
-  function changeSlide(n) {
-    showSlide(currentSlide += n);
-  }
-
-  // Function to update the slide's visibility
-  function showSlide(n) {
-    var slides = document.getElementsByClassName("gallery-img");
-
-    // Handle case when the slideshow reaches the last slide
-    if (n > slides.length) {
-      currentSlide = 1;
+    // Function to increment/decrement the current slide number
+    function changeSlide(n) {
+      showSlide(currentSlide += n);
     }
 
-    // Handle case when the slideshow reaches the first slide
-    if (n < 1) {
-      currentSlide = slides.length;
+    // Function to update the slide's visibility
+    function showSlide(n) {
+      var slides = document.getElementsByClassName("gallery-img");
+
+      // Handle case when the slideshow reaches the last slide
+      if (n > slides.length) {
+        currentSlide = 1;
+      }
+
+      // Handle case when the slideshow reaches the first slide
+      if (n < 1) {
+        currentSlide = slides.length;
+      }
+
+      // Hide all slides
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      // Display the current slide
+      slides[currentSlide - 1].style.display = "block";
     }
 
-    // Hide all slides
-    for (var i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
+    // Event listeners for next and previous buttons
+    document.getElementById("prev").addEventListener("click", function() {
+      changeSlide(-1);
+    });
 
-    // Display the current slide
-    slides[currentSlide - 1].style.display = "block";
-  }
-
-  // Event listeners for next and previous buttons
-  document.getElementById("prev").addEventListener("click", function() {
-    changeSlide(-1);
-  });
-
-  document.getElementById("next").addEventListener("click", function() {
-    changeSlide(1);
+    document.getElementById("next").addEventListener("click", function() {
+      changeSlide(1);
+    });
   });
 </script>
 </body>

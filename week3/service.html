@@ -6,106 +6,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-   
-	.services h1 {
-	   font-size: 2rem;
-	   margin-bottom: 1rem;
-	}
+    .services h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
-	.services ul {
-	   list-style: none;
-	}
+    .services ul {
+      list-style: none;
+    }
 
-	.services li {
-	   margin-bottom: 2rem;
-	}
+    .services li {
+      margin-bottom: 2rem;
+    }
 
-	.services h2 {
-	   font-size: 1.5rem;
-	   margin-bottom: 1rem;
-	}
+    .services h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
 
-	.services p {
-	   line-height: 1.5;
-	   margin-bottom: 1rem;
-	}
+    .services p {
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
 
-	.services ul li {
-	   margin-top: 0.5rem;
-	   margin-bottom: 0.5rem;
-	}
-		.services ul li:first-of-type {
-	   margin-top: 1rem;
-	}
+    .services ul li {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-	.services ul li:last-of-type {
-	   margin-bottom: 1rem;
-	}
-   
+    .services ul li:first-of-type {
+      margin-top: 1rem;
+    }
+
+    .services ul li:last-of-type {
+      margin-bottom: 1rem;
+    }
+
+    /* Gallery Slideshow Styles */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      margin-top: 30px; /* Adjust the margin as needed */
+    }
+
+    .gallery-img-container {
+      display: flex;
+    }
+
+    .gallery-img {
+      display: none;
+      width: 100%;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .gallery-img:first-child {
+      display: block;
+    }
   </style>
-  
-  
- 
-  
 </head>
 <body>
- <div>
-  <header>
-    <h1 class="headeraH1">Wanderlust Voyages | Travel Agency</h1>
-	</header>
+  <div>
+    <header>
+      <h1 class="headeraH1">Wanderlust Voyages | Travel Agency</h1>
+    </header>
     <nav>
       <ul>
-         <li><a href="index.html">Home</a></li>
-         <li><a href="about.html">About</a></li>
-         <li><a href="services.html">Services</a></li>
-         <li><a href="gallery.html">Gallery</a></li>
-         <li><a href="contact.html">Contact</a></li>
-         <li><a href="tasks.html">Tasks</a></li>
-     </ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tasks.html">Tasks</a></li>
+      </ul>
     </nav>
-  
-  <main class="services">
-   <h1>Our Services</h1>
-      <ul>
-         <li>
-            <h2>Itinerary Planning and Tour Packages:</h2>
-            <p>Travel agencies offer customized and pre-packaged tours to suit the preferences of individual travelers or groups. <br>
-               These can range from local city tours to extensive multi-country expeditions. <br>
-               The agency handles all aspects, from creating an itinerary that includes sightseeing, activities, and experiences, to ensuring that all logistics like transport and accommodation are smoothly coordinated.</p>
-            
-         </li>
-         <li>
-            <h2>Flight and Transport Bookings</h2>
-            <p>One of the primary services offered by travel agencies is the reservation of flights. <br>
-               This encompasses domestic and international travel, and can also extend to charter flights for special groups or events. Apart from flights, agencies also book other modes of transportation such as trains, buses, and car rentals, ensuring that travelers can move seamlessly from one destination to another.
-            </p>
-            
-         </li>
-         <li>
-            <h2>Accommodation Reservations</h2>
-            <p>Travel agencies have partnerships and affiliations with a wide range of accommodations, from luxury hotels to budget hostels and local guesthouses. 
-               <br>They assist travelers in finding and booking lodgings that fit their budget, preferences, and travel itinerary. Often, due to established relationships, agencies can secure rooms at competitive rates and sometimes with added benefits.
 
-            </p>
-            
-         </li>
+    <main class="services">
+      <h1>Our Services</h1>
+      <ul>
+        <li>
+          <h2>Itinerary Planning and Tour Packages:</h2>
+          <p>Travel agencies offer customized and pre-packaged tours to suit the preferences of individual travelers or groups. <br>
+            These can range from local city tours to extensive multi-country expeditions. <br>
+            The agency handles all aspects, from creating an itinerary that includes sightseeing, activities, and experiences, to ensuring that all logistics like transport and accommodation are smoothly coordinated.</p>
+        </li>
+        <li>
+          <h2>Flight and Transport Bookings</h2>
+          <p>One of the primary services offered by travel agencies is the reservation of flights. <br>
+            This encompasses domestic and international travel and can also extend to charter flights for special groups or events. Apart from flights, agencies also book other modes of transportation such as trains, buses, and car rentals, ensuring that travelers can move seamlessly from one destination to another.
+          </p>
+        </li>
+        <li>
+          <h2>Accommodation Reservations</h2>
+          <p>Travel agencies have partnerships and affiliations with a wide range of accommodations, from luxury hotels to budget hostels and local guesthouses. 
+            <br>They assist travelers in finding and booking lodgings that fit their budget, preferences, and travel itinerary. Often, due to established relationships, agencies can secure rooms at competitive rates and sometimes with added benefits.
+          </p>
+        </li>
       </ul>
 
-      <!-- Call to Action Section -->
-<div class="cta-container">
-   <h2>Ready to Experience Our Services?</h2>
-   <p>Join us today and discover the difference we can make for you!</p>
-   <a href="contact.html" class="cta-button">Contact Us Now</a>
-</div>
+      <!-- Gallery Slideshow Section -->
+      <div class="slideshow-container">
+        <!-- Previous button -->
+        <a id="prev" class="prev cursor">&#10094;</a>
 
-  </main>
-  <footer>
+        <!-- Next button -->
+        <a id="next" class="next cursor">&#10095;</a>
+
+        <!-- Slides -->
+        <div class="gallery-img-container">
+          <img class="gallery-img" src="image/1.jpeg" alt="Image 1">
+          <img class="gallery-img" src="image/2.jpeg" alt="Image 2">
+          <img class="gallery-img" src="image/3.jpeg" alt="Image 3">
+          <!-- Add more images as needed -->
+        </div>
+      </div>
+      <!-- End of Gallery Slideshow Section -->
+
+      <!-- Call to Action Section -->
+      <div class="cta-container">
+        <h2>Ready to Experience Our Services?</h2>
+        <p>Join us today and discover the difference we can make for you!</p>
+        <a href="contact.html" class="cta-button">Contact Us Now</a>
+      </div>
+    </main>
+
+    <footer>
       <ul>
         <li><a href="https://www.facebook.com/">Facebook</a></li>
         <li><a href="https://twitter.com/">Twitter</a></li>
         <li ><a href="https://www.instagram.com/">Instagram</a></li>
       </ul>
-    <p >&copy; 2024 Wanderlust Voyages | Travel Agency. All rights reserved.</p>
-  </footer>
-  </div>
-</body>
+      <p >&copy
+

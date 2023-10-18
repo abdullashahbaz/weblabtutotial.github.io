@@ -110,4 +110,30 @@
   <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <form
+        <form id="registrationForm">
+            <div class="input-control">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <div class="error" id="usernameError"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error" id="passwordError"></div>
+            </div>
+            <div class="input-control">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="error" id="confirmPasswordError"></div>
+            </div>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+</body>
+</html>

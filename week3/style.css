@@ -1,44 +1,50 @@
-/* Reset Styles */
-body {
+/* ================================
+   Global Styles
+================================ */
+
+body, html {
+    font-weight: 300;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url("images/backgroundimages.webp");
-    background-size: cover;
+    font-family: 'Gabarito', cursive;
+    color: #23112e;
+    font-size: 1.09rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
+/* ================================
+   Header Styles
+================================ */
 
-/* Header Styles */
 header {
-    background: linear-gradient(182deg, #2222c2, #5b5151);
-    color: #fff;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    background: #ffffffd9;
     padding: 20px;
-    position: sticky;
-    top: 0;
+    transition: height 0.3s ease;
 }
 
-.headeraH1 {
-    margin: 0;
+.logo-container {
+    flex: 1;
+    padding-right: 20px;
 }
 
-.banner {
-    width: 100%;
-    overflow: hidden;
+.logo {
+    max-width: 100%;
+    height: 117px; 
+    padding-left: 4rem;
 }
 
-.banner img {
-    width: 100%;
-    height: auto;
-    display: block;
+.nav-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
 }
 
-
-/* Navigation Styles */
 nav ul {
-    background-color: #333;
-    color: #fff;
     text-align: center;
     list-style-type: none;
     margin: 0;
@@ -51,62 +57,73 @@ nav li {
 
 nav a {
     display: block;
-    color: #fff;
+    font-weight: 700;
+    color: #23112e;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 25px;
     text-decoration: none;
-    transition: background-color 0.3s;  /* Smooth transition for hover effect */
+    transition: background 0.3s ease-in-out;
+}
+
+nav li a img {
+    height: 24px;
+    width: auto;
+    vertical-align: middle;
 }
 
 nav a:hover {
-    background-color: #505050;  /* Darker shade for hover */
+    background: #4600462a;
+    color: #730577;
 }
 
-/* Banner Styles */
+nav a.active {
+    color: #9900a7;
+}
+
+/* ================================
+   Banner Styles
+================================ */
+
 .banner-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: 100%;
-    overflow: hidden;
+    display: flex; /* This will make its children use flexbox layout */
+    justify-content: center; /* This will center its children horizontally */
+    align-items: center; /* This will center its children vertically */
 }
 
-.centered-banner {
-    padding: 30px;
-    max-width: 80%;
-    height: auto;
+.banner img {
+    align-content: center;
+    width: 100%; /* Set the desired width in pixels */
+    height: 80%; /* Set the desired height in pixels */
+    display: block;
 }
 
-/* Main Content Styles */
+/* ================================
+   Main Content Styles
+================================ */
+
 main {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .services {
     margin: 2rem auto;
-    padding: 2rem;
-    background-color: #cacaca;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-main h3 {
-    margin-top: 20px;
-}
-
-/* Service Columns */
 .services-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
 }
 
 .service-column {
-    flex-basis: calc(50% - 20px);
-    max-width: calc(50% - 20px);
+    flex-basis: calc(50% - 50px);
+    max-width: calc(50% - 50px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,16 +131,18 @@ main h3 {
 }
 
 .service-column img {
-    width: 180px;
+    width: 90%;
     height: auto;
     margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.service-column h3 {
-    margin-bottom: 5px;
+.service-column:hover img {
+    transform: scale(1.09);
 }
 
-/* Media Queries for Responsiveness */
+/* Mobile Responsiveness: Media Queries */
+
 @media (max-width: 800px) {
     .service-column {
         flex-basis: calc(50% - 20px);
@@ -131,41 +150,76 @@ main h3 {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Make header content stack vertically */
+        height: auto; /* Adjust height based on content */
+        padding: 10px; /* Adjust padding if needed */
+    }
+
+    .logo-container, .nav-container {
+        width: 100%; /* Take full width of the header */
+        text-align: center; /* Center the logo and navigation links */
+    }
+        nav ul {
+            display: flex; /* Use flexbox to arrange list items in a row */
+            flex-wrap: wrap; /* Allow the items to wrap to the next line if necessary */
+            justify-content: space-around; /* Distribute space around items */
+            padding: 10px 0; /* Adjust padding if needed */
+    }
+
+    nav li {
+        margin: 0 3px; /* Adjust horizontal margins */
+        flex: 1; /* Allow each item to take up an equal amount of space */
+        text-align: center; /* Center the text within the item */
+    }
+
+    .logo {
+        height: 60px; /* Further reduction for smaller screens */
+    }
+
     .service-column {
         flex-basis: 100%;
         max-width: 100%;
     }
 }
 
-/* Call to Action Styles */
+/* ================================
+   Call to Action Styles
+================================ */
+
 .cta-container {
     text-align: center;
-    padding: 40px;
-    background-color: #fffdfd;
+    padding: 4rem;
+    background-color: #fdedfb;
     margin-top: 30px;
-
+    border: 1px dotted #ffcaf8;
 }
 
 .cta-button {
-   display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF;
+    display: inline-block;
+    padding: 20px 40px;
+    background: linear-gradient(15deg, #350158, #af23ae);
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-top: 15px;
     transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #7640B3;
+    background: linear-gradient(45deg, #af23ae, #350158);
+    color: #ffcaf8;
 }
 
-/* Footer Styles */
+/* ================================
+   Footer Styles
+================================ */
+
 footer {
-    background-color: #333;
+    background: linear-gradient(15deg, #350158, #af23ae);
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -183,16 +237,13 @@ footer li {
 footer a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;  /* Smooth transition for hover effect */
+    transition: color 0.3s;
 }
 
 footer a:hover {
-    color: #b3b3b3;  /* Lighter color on hover */
+    color: #b3b3b3;
 }
 
-footer p {
-    margin: 10px 0 0;
-}
 
 /* ================================
    Gallery Slide show Style

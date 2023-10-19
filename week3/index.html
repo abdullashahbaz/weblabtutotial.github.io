@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wanderlust Voyages | Travel Agency</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <link rel="stylesheet" href="style.css">
-  <script src="index.js"></script>
 </head>
 
-<body>
+<body> 
   <!-- Main Container -->
   <div>
 
@@ -21,18 +19,19 @@
     <!-- Navigation Section -->
     <nav>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li><a href="tasks.html" class="active">Tasks</a></li>
-      </ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="tasks.html">Tasks</a></li>
+    </ul>
     </nav>
 
     <!-- Banner Section -->
     <section class="banner-container">
       <img src="image/travel banner.svg" alt="Illustrative banner of travel destinations" class="centered-banner" loading="lazy">
+
     </section>
 
     <!-- Main Content Section -->
@@ -91,7 +90,7 @@
       <section class="cta-container">
         <h2>Ready to Experience Our Services?</h2>
         <p>Join us today and discover the difference we can make for you!</p>
-        <a class="cta-button" id="openModal">Contact Us Now</a>
+        <a href="contact.html" class="cta-button">Contact Us Now</a>
       </section>
 
     </main>
@@ -105,35 +104,6 @@
       </ul>
       <p>&copy; 2024 Wanderlust Voyages | Travel Agency. All rights reserved.</p>
     </footer>
-  </div>
-  <!-- Modal -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="registrationForm">
-            <div class="input-control">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <div class="error" id="usernameError"></div>
-            </div>
-            <div class="input-control">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <div class="error" id="emailError"></div>
-            </div>
-            <div class="input-control">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <div class="error" id="passwordError"></div>
-            </div>
-            <div class="input-control">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-                <div class="error" id="confirmPasswordError"></div>
-            </div>
-            <button type="submit" class="submit">Submit</button>
-        </form>
-    </div>
   </div>
 </body>
 </html>

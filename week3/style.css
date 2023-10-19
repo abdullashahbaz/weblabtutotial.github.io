@@ -1,12 +1,13 @@
 /* Reset Styles */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background-image: url("images/backgroundimages.webp");
     background-size: cover;
 }
+
+
 
 /* Header Styles */
 header {
@@ -33,6 +34,7 @@ header {
     display: block;
 }
 
+
 /* Navigation Styles */
 nav ul {
     background-color: #333;
@@ -53,11 +55,11 @@ nav a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s;  /* Smooth transition for hover effect */
 }
 
 nav a:hover {
-    background-color: #505050;
+    background-color: #505050;  /* Darker shade for hover */
 }
 
 /* Banner Styles */
@@ -87,7 +89,7 @@ main {
     margin: 2rem auto;
     padding: 2rem;
     background-color: #cacaca;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 main h3 {
@@ -139,34 +141,32 @@ main h3 {
 /* Call to Action Styles */
 .cta-container {
     text-align: center;
-    padding: 20px;
-    background-color: #96ec13;
-    margin-top: 70px;
-    font-size: 17px;
-    border: 1px solid #000;
+    padding: 40px;
+    background-color: #fffdfd;
+    margin-top: 30px;
+
 }
 
-.cta-container h2 {
-    text-transform: uppercase;
-    color: black;
-    font-weight: 800;
-}
-
-.cta-button,
-.submit {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #000000;
+.cta-button {
+   display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 15px;
-    font-size: 14px;
-    margin: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
     transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: #7640B3;
+}
+
+.cta-container p {
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
 }
 
 /* Footer Styles */
@@ -189,128 +189,13 @@ footer li {
 footer a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s;  /* Smooth transition for hover effect */
 }
 
 footer a:hover {
-    color: #b3b3b3;
+    color: #b3b3b3;  /* Lighter color on hover */
 }
 
 footer p {
     margin: 10px 0 0;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    padding-top: 60px;
-}
-
-.modal-content {
-    display: flex;
-    justify-content: center;
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 3px solid #000;
-    width: 40%;
-    height: 60%;
-}
-
-.close {
-    color: #000;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 30px;
-    right: 10px;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Style for the error message: text color, font size, and height */
-.input-control .error {
-    color: #ff3860;
-    font-size: 9px;
-    height: 13px;
-}
-
-/* Style for the form: setting width, auto margin for centering, padding,
-background color, border radius for rounded corners, and font size */
-#form {
-    width: 300px;
-    margin: 20vh auto 0 auto;
-    padding: 20px;
-    background-color: whitesmoke;
-    border-radius: 4px;
-    font-size: 12px;
-}
-
-/* Style for the form's heading: setting the text color and alignment */
-#form h1 {
-    color: #0f2027;
-    text-align: center;
-}
-
-/* Style for the form's button: padding, top margin, full width, text color,
-background color, no border, and rounded corners */
-#form button {
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-    color: white;
-    background-color: rgb(41, 57, 194);
-    border: none;
-    border-radius: 4px;
-}
-
-/* Container for input fields: using flexbox for layout, column direction */
-.input-control {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Style for input fields inside the container: border style, rounded corners,
-block-level display, font size, padding, full width */
-.input-control input {
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    display: block;
-    font-size: 12px;
-    padding: 10px;
-    width: 100%;
-}
-
-/* Remove focus outline from input fields */
-.input-control input:focus {
-    outline: 0;
-}
-
-/* Style for input fields with class "success": green border */
-.input-control.success input {
-    border-color: #09c372;
-}
-
-/* Style for input fields with class "error": red border */
-.input-control.error input {
-    border-color: #ff3860;
-}
-
-/* Style for the error message: text color, font size, and height */
-.input-control .error {
-    color: #ff3860;
-    font-size: 9px;
-    height: 13px;
 }

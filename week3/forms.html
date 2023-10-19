@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+
+    <style>
+        /* Style for the form: setting width, auto margin for centering, padding, 
+background color, border radius for rounded corners, and font size */
+        #form {
+            width: 300px;
+            margin: 20vh auto 0 auto; /* This centers the form vertically and 
+            horizontally */
+            padding: 20px;
+            background-color: whitesmoke; /* Light gray background for the form */
+            border-radius: 4px; /* Rounded corners for the form */
+            font-size: 12px;
+        }
+        /* Style for the form's heading: setting the text color and alignment */
+        #form h1 {
+            color: #0f2027; /* Dark text color for the heading */
+            text-align: center; /* Center-align the heading */
+        }
+        /* Style for the form's button: padding, top margin, full width, text color, 
+        background color, no border, and rounded corners */
+        #form button {
+            padding: 10px;
+            margin-top: 10px; /* Space above the button */
+            width: 100%; /* Make the button expand the full width of the form */
+            color: white; /* White text color for the button */
+            background-color: rgb(41, 57, 194); /* Blue background color for the button 
+            */
+            border: none; /* Remove the default border */
+            border-radius: 4px; /* Rounded corners for the button */
+        }
+        /* Container for input fields: using flexbox for layout, column direction */
+        .input-control {
+            display: flex;
+            flex-direction: column; /* Stack the children (label, input, error message) 
+            vertically */
+            width: 92%;
+        }
+        /* Style for input fields inside the container: border style, rounded corners, 
+        block-level display, font size, padding, full width */
+        .input-control input {
+            border: 2px solid #f0f0f0; /* Light gray border for the inputs */
+            border-radius: 4px; /* Rounded corners for the inputs */
+            display: block; /* Display input field as a block */
+            font-size: 12px; /* Text size within the input field */
+            padding: 10px; /* Space inside the input field */
+            width: 100%; /* Input field takes up 100% of the form's width */
+        }
+        /* Remove focus outline from input fields */
+        .input-control input:focus {
+            outline: 0; /* Remove outline when input is focused */
+        }
+        /* Style for input fields with class "success": green border */
+        .input-control.success input {
+            border-color: #09c372; /* Green border to indicate successful input */
+        }
+        /* Style for input fields with class "error": red border */
+        .input-control .error {
+            border-color: #ff3860; /* Red border to indicate an error in input */
+        }
+        /* Style for the error message: text color, font size, and height */
+        .input-control .error {
+            color: #ff3860; /* Red text color for error messages */
+            height: 13px; /* Explicit height to ensure consistent spacing */
+            padding-top: 10px; /* Space above the error message */
+        }
+        .input-control input::placeholder {
+            font-size: 12px; /* Set the font size for placeholder text */
+            color: #797979; /* Set the color for placeholder text */
+        }
+    </style>
+</head>
+<body>
+    <div id="form">
+        <h1>User Registration</h1>
+        <div class="input-control">
+            <label for="username" style="padding-top: 15px;">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+            <div class="error" id="username-error"></div>
+        </div>
+
+        <div class="input-control">
+            <label for="email" style="padding-top: 15px;">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <div class="error" id="email-error"></div>
+        </div>
+
+        <div class="input-control">
+            <label for="password" style="padding-top: 15px;">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <div class="error" id="password-error"></div>
+        </div>
+
+        <div class="input-control">
+            <label for="confirm-password" style="padding-top: 15px;">Confirm Password:</label>
+            <input type="password" id="confirm-password" placeholder="Confirm your password">
+            <div class="error" id="confirm-password-error"></div>
+        </div>
+
+        <button id="submit-button" onclick="validateForm()">Submit</button>
+    </div>
+    <script>
+    function validateForm() {
+        event.preventDefault(); // Prevent form from submitting
+
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+
+        const usernameError = document.getElementById("username-error");
+        const emailError = document.getElementById("email-error");
+        const passwordError = document.getElementById("password-error");
+        const confirmPasswordError = document.getElementById("confirm-password-error");
+
+        // Validate username: must be at least 3 characters
+        if (username.value.length < 1) {
+            username.classList.add("error");
+            usernameError.textContent = "Username must be at least 3 characters";
+        } else {
+            username.classList.remove("error");
+            username.classList.add("success");
+            usernameError.textContent = "";
+            username.style.borderColor = "green";
+        }
+
+        // Validate Email: must contain @, "." and be at least 8 characters
+        if (email.value.indexOf('@') === -1 || email.value.indexOf('.') === -1 || email.value.length <= 8) {
+            email.classList.add("error");
+            emailError.textContent = "Please enter a valid email address";
+        } else {
+            email.classList.remove("error");
+            email.classList.add("success");
+            emailError.textContent = "";
+            email.style.borderColor = "green";
+        }
+
+        //Validate password
+        if (password.value.length < 8) {
+            password.classList.add("error");
+            passwordError.textContent = "Password must be at least 8 characters";
+        } else {
+            password.classList.remove("error");
+            password.classList.add("success");
+            passwordError.textContent = "";
+            password.style.borderColor = "green";
+        }
+
+        //Validate confirm password
+        if (confirmPassword.value !== password.value || confirmPassword.value.length < 8) {
+            confirmPassword.classList.add("error");
+            confirmPasswordError.textContent = "Passwords do not match";
+        } else {
+            confirmPassword.classList.remove("error");
+            confirmPassword.classList.add("success");
+            confirmPasswordError.textContent = "";
+            confirmPassword.style.borderColor = "green";
+        }
+    }
+
+        // Real-time validation: Check inputs as they input the values in the form
+        document.getElementById("username").addEventListener("input", validateForm);
+        document.getElementById("email").addEventListener("input", validateForm);
+        document.getElementById("password").addEventListener("input", validateForm);
+        document.getElementById("confirm-password").addEventListener("input", validateForm);
+    </script>
+</body>
+</html>

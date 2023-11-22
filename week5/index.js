@@ -1,9 +1,9 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const dotenv = require('dotenv');
-const mysql = require('mysql2');
+const mysql = require('mysql');
 const hbs = exphbs.create();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
 dotenv.config();
